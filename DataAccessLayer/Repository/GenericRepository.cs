@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +29,19 @@ namespace DataAccessLayer.Repository
             context.SaveChanges();
         }
 
+        public T GetByID(int id)
+        {
+            return context.Set<T>().Find(id);
+        }
+
         public List<T> GetList()
         {
             return _object.ToList();
+        }
+
+        public List<T> GetList(Expression<Func<T, bool>> filter)
+        {
+           return _object.Where(filter).ToList();
         }
 
         public void Insert(T entity)
@@ -41,7 +52,7 @@ namespace DataAccessLayer.Repository
 
         public void Update(T entity)
         {
-
+            
             context.SaveChanges();
         }
     }

@@ -27,12 +27,8 @@ namespace MVCProjeCamp.UI.Controllers
 
             return View();
         }
-        CategoryManager categoryManager = new CategoryManager();
+        
 
-        public ActionResult Deneme()
-        {
-            var values =  categoryManager.TGetList();
-            return View(values);
-        }
+        
     }
 }

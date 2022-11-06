@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>İstatistik</th>
+            <th>Değer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Toplam Kategori Sayısı</td>
+            <td>@ViewBag.v1</td>
+        </tr>
+        <tr>
+            <td>Başlık tablosunda "yazılım" kategorisine ait başlık sayısı</td>
+            <td>@ViewBag.v2</td>
+        </tr>
+        <tr>
+            <td>Yazar adında 'a' harfi geçen yazar sayısı</td>
+            <td>@ViewBag.v3</td>
+        </tr>
+        <tr>
+            <td>En fazla başlığa sahip kategori adı</td>
+            <td>@ViewBag.v4</td>
+        </tr>
+        <tr>
+            <td>Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark</td>
+            <td>@ViewBag.v5</td>
+        </tr>
+    </tbody>
+</table>
+
