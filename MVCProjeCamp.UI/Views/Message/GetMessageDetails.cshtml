@@ -1,0 +1,79 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewBag.Title = "GetMessageDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Mesaj İçeriği</h1>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Partial("/Views/Contact/ContactSideBar.cshtml")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">Mesaj İçeriği</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5 class="mb-2">@Model.MessageSubject</h5>
+                                <h6>
+                                    From: @Model.MessageSenderMail 
+                                    <span class="mailbox-read-time float-right">@(((DateTime)Model.MessageDate).ToString("dd-MMM-yyyy"))</span>
+                                </h6>
+                            </div>
+
+                            <!-- /.mailbox-controls -->
+                            <div class="mailbox-read-message">
+                                <br />
+                                <div class="container" style="width:90%">
+                                    <div style="text-align:center">
+                                        <h4>@Model.MessageSubject</h4>
+                                    </div>
+                                    <br />
+                                    <p>@Model.MessageDetails</p>
+
+                                </div>
+                                <br />
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="float-right">
+                                    <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
+                                    <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+                                </div>
+                                <a href="/Message/TrashMessage/@Model.MessageID" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</a>
+                                <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+                            </div>
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+</body>
+

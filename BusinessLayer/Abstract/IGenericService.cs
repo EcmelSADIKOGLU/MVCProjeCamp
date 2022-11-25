@@ -15,5 +15,7 @@ namespace BusinessLayer.Abstract
         void TInsert(T entity);
         void TUpdate(T entity);
         void TDelete(T entity);
+
+        
     }
 }

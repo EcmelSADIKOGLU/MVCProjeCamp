@@ -57,6 +57,8 @@
     <Compile Include="Abstract\IContentDAL.cs" />
     <Compile Include="Abstract\IGenericDAL.cs" />
     <Compile Include="Abstract\IHeadingDAL.cs" />
+    <Compile Include="Abstract\IImageFileDAL.cs" />
+    <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="EntityFramework\EFAboutDAL.cs" />
@@ -64,7 +66,45 @@
     <Compile Include="EntityFramework\EFContactDAL.cs" />
     <Compile Include="EntityFramework\EFContentDAL.cs" />
     <Compile Include="EntityFramework\EFHeadingDAL.cs" />
+    <Compile Include="EntityFramework\EFImageFileDAL.cs" />
+    <Compile Include="EntityFramework\EFMessageDAL.cs" />
     <Compile Include="EntityFramework\EFWriterDAL.cs" />
+    <Compile Include="Migrations\202211061346465_mig1.cs" />
+    <Compile Include="Migrations\202211061346465_mig1.designer.cs">
+      <DependentUpon>202211061346465_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211061549221_mig2.cs" />
+    <Compile Include="Migrations\202211061549221_mig2.designer.cs">
+      <DependentUpon>202211061549221_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211101801013_add_WriterState.cs" />
+    <Compile Include="Migrations\202211101801013_add_WriterState.designer.cs">
+      <DependentUpon>202211101801013_add_WriterState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211101918288_add_ContentStatus.cs" />
+    <Compile Include="Migrations\202211101918288_add_ContentStatus.designer.cs">
+      <DependentUpon>202211101918288_add_ContentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211101921446_add_status.cs" />
+    <Compile Include="Migrations\202211101921446_add_status.designer.cs">
+      <DependentUpon>202211101921446_add_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211111847321_add_messageClass_and_ContactDate.cs" />
+    <Compile Include="Migrations\202211111847321_add_messageClass_and_ContactDate.designer.cs">
+      <DependentUpon>202211111847321_add_messageClass_and_ContactDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211161946438_message-contact-StatusAdding.cs" />
+    <Compile Include="Migrations\202211161946438_message-contact-StatusAdding.designer.cs">
+      <DependentUpon>202211161946438_message-contact-StatusAdding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211162108557_add-imagefile-entity.cs" />
+    <Compile Include="Migrations\202211162108557_add-imagefile-entity.designer.cs">
+      <DependentUpon>202211162108557_add-imagefile-entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211171339245_add-admin-table.cs" />
+    <Compile Include="Migrations\202211171339245_add-admin-table.designer.cs">
+      <DependentUpon>202211171339245_add-admin-table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -78,6 +118,35 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202211061346465_mig1.resx">
+      <DependentUpon>202211061346465_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211061549221_mig2.resx">
+      <DependentUpon>202211061549221_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211101801013_add_WriterState.resx">
+      <DependentUpon>202211101801013_add_WriterState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211101918288_add_ContentStatus.resx">
+      <DependentUpon>202211101918288_add_ContentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211101921446_add_status.resx">
+      <DependentUpon>202211101921446_add_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211111847321_add_messageClass_and_ContactDate.resx">
+      <DependentUpon>202211111847321_add_messageClass_and_ContactDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211161946438_message-contact-StatusAdding.resx">
+      <DependentUpon>202211161946438_message-contact-StatusAdding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211162108557_add-imagefile-entity.resx">
+      <DependentUpon>202211162108557_add-imagefile-entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211171339245_add-admin-table.resx">
+      <DependentUpon>202211171339245_add-admin-table.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -16,6 +16,8 @@ namespace MVCProjeCamp.UI.Controllers
     {
         
         CategoryManager categoryManager = new CategoryManager(new EFCategoryDAL());
+
+        [Authorize]
         public ActionResult Index()
         {
             var values = categoryManager.TGetList();
@@ -65,9 +67,24 @@ namespace MVCProjeCamp.UI.Controllers
         [HttpPost]
         public ActionResult EditCategory(Category category)
         {
-             
-            categoryManager.TUpdate(category);
-            return RedirectToAction("Index");
+            CategoryValidatior validatior = new CategoryValidatior();
+            ValidationResult result = validatior.Validate(category);
+            if (result.IsValid)
+            {
+                categoryManager.TUpdate(category);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+                
+            }
+            return View(category);
+
+
         }
     } 
 }
